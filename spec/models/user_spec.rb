@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
   end
 
   it "is invalid without a first name" do
-    user = FactoryBot.build(:user, first_name: nil)
+    user = FactoryBot.build(:user, :no_name_user)
     user.valid?
     expect(user.errors[:first_name]).to include("can't be blank")
   end
