@@ -34,4 +34,9 @@ RSpec.describe User, type: :model do
     user = FactoryBot.build(:user, first_name: "John", last_name: "Doe")
     expect(user.name).to eq "John Doe"
   end
+
+  it 'can have many projects' do
+    user = FactoryBot.create(:user, :with_projects)
+    expect(user.projects.length).to eq 5
+  end
 end

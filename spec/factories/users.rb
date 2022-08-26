@@ -7,7 +7,7 @@ FactoryBot.define do
   end
 
   trait :with_projects do
-    after(:create) { |user| create_list(:project, 1, owner: user) }
+    after(:create) { |user| create_list(:project, 5, owner: user) }
   end
 
   trait :no_name_user do
